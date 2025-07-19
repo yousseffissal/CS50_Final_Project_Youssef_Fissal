@@ -38,7 +38,7 @@ This project was inspired by a real need in my university club, where I am also 
 
 ---------------------------------
 
-## 🔍 Note to the CS50 Staff
+## 🔍 Note to the CS50 Staff + Challenges
 
 While working on this project, I explored using PHP to complement the frontend stack. After researching the course guidelines, I found that there is no restriction on using additional technologies — in fact, CS50 encourages students to be curious, explore, and go beyond what's taught in the lectures.
 
