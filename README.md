@@ -28,15 +28,7 @@ Watch this video for more informations:
 
 My project simplifies managing membership registrations for a university club called CTDE by replacing manual processes with a digital system. It includes two main parts: a registration form for members to submit their details and an admin dashboard for authorized staff to view, edit, or delete registrations securely.
 
-Built using core web technologies HTML, CSS, JavaScript, PHP, and MySQL. the site is fully responsive and functional without external libraries. Security features like password hashing and session management protect the admin area. This project solves a real community problem while reinforcing full-stack development skills learned in CS50.
-
-While working on this project, I explored using PHP to complement the frontend stack. After researching the course guidelines, I found that there is no restriction on using additional technologies, in fact, CS50 encourages students to be curious, explore, and go beyond what's taught in the lectures.
-
-I initially considered using Python to implement a feature that allows downloading table data as a CSV file. However, I encountered several challenges. Many hosting environments and deployment platforms do not support Python natively, often due to security restrictions or configuration limitations. This means that using Python for such a simple task would require users to install a Python interpreter and configure their environment locally, adding unnecessary complexity.
-
-While it is possible to include Python scripts for local experimentation, I decided that this would complicate the setup for end users and reduce portability. I also realized that the same functionality could be achieved using PHP which is better supported by most hosting services and more secure for web-based tasks.
-
-In the end, I opted for a simpler and more user-friendly solution by implementing the CSV export functionality using JavaScript. This approach keeps everything in the browser, requires no extra tools or installations, and works smoothly across platforms 😊.
+Built using core web technologies HTML, CSS, JavaScript, PHP, and MySQL. the site is fully responsive and functional without external libraries. Security features like password hashing and session management protect the admin area. This project solves a real community problem while reinforcing full-stack development skills learned in CS50 😊.
 
 ---------------------------------
 
@@ -51,6 +43,12 @@ This project was inspired by a real need in my university club, where I am also 
 While working on this project, I explored using PHP to complement the frontend stack. After researching the course guidelines, I found that there is no restriction on using additional technologies — in fact, CS50 encourages students to be curious, explore, and go beyond what's taught in the lectures.
 
 I integrated PHP to manage server-side logic and data storage, and this experience helped me understand how different parts of a web application connect together. It was a great opportunity to apply what I learned and expand my skill set.
+
+I initially considered using Python to implement a feature that allows downloading table data as a CSV file. However, I encountered several challenges. Many hosting environments and deployment platforms do not support Python natively, often due to security restrictions or configuration limitations. This means that using Python for such a simple task would require users to install a Python interpreter and configure their environment locally, adding unnecessary complexity.
+
+While it is possible to include Python scripts for local experimentation, I decided that this would complicate the setup for end users and reduce portability. I also realized that the same functionality could be achieved using PHP which is better supported by most hosting services and more secure for web-based tasks.
+
+In the end, I opted for a simpler and more user-friendly solution by implementing the CSV export functionality using JavaScript. This approach keeps everything in the browser, requires no extra tools or installations, and works smoothly across platforms 
 
 ---------------------------------
 
