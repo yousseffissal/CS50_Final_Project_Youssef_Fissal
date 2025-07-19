@@ -8,6 +8,22 @@ Watch this video for more informations:
 
 ---------------------------------
 
+## 🖼️ Project Images:
+
+### 📋 Registration Form
+
+![Registration Form](<Code_Files/imgs & videos/screenshots/Form.png>)
+
+### 🔐 Login Page
+
+![Login Page](<Code_Files/imgs & videos/screenshots/Signin.png>)
+
+### 📋 Admin Dashboard
+
+![Dashboard Overview](<Code_Files/imgs & videos/screenshots/Table.png>)
+
+---------------------------------
+
 ## 📄 Description:
 
 My project simplifies managing membership registrations for a university club called CTDE by replacing manual processes with a digital system. It includes two main parts: a registration form for members to submit their details and an admin dashboard for authorized staff to view, edit, or delete registrations securely.
@@ -71,6 +87,12 @@ CS50_Final_Project_Youssef_Fissal
 │   │   │   ├── pin.png 
 │   │   │   ├── pin.png
 │   │   │   └── television.png
+│   │   │
+│   │   ├── screenshots/
+│   │   │   ├── Form.png
+│   │   │   ├── Signin.png
+│   │   │   └── Table.png
+│   │   │
 │   │   └── video/
 │   │       └── video.mp4
 │   │ 
