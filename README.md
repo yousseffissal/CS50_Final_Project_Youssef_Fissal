@@ -10,7 +10,7 @@ Watch this video for more informations:
 
 ## 🖼️ Project Images:
 
-### 📋 Registration Form
+### 🖊️ Registration Form
 
 ![Registration Form](<Code_Files/imgs & videos/screenshots/Form.png>)
 
