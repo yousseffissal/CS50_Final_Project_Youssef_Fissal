@@ -235,29 +235,29 @@ This file controls the update modal in the admin dashboard and enables client-si
 
 📋 openModal(id, name, age, level, phone, email, gender, hobby, message)
 
-   ✔️ Fills the update form with the selected member’s data.  
-   ✔️ Displays the modal for editing.  
-   ✔️ Makes updating faster and reduces errors.
+    ✔️ Fills the update form with the selected member’s data.  
+    ✔️ Displays the modal for editing.  
+    ✔️ Makes updating faster and reduces errors.
 
 ❌ closeModal()
 
-   ✔️ Hides the update modal.  
-   ✔️ Called when canceling or after updating.  
-   ✔️ Keeps the interface clean and focused.
+    ✔️ Hides the update modal.  
+    ✔️ Called when canceling or after updating.  
+    ✔️ Keeps the interface clean and focused.
 
 📥 downloadCSV()
 
-   ✔️ Reads the visible HTML table data and formats it into a clean, well-structured CSV.  
-   ✔️ Automatically triggers a download without requiring any server-side processing.  
-   ✔️ Ensures compatibility with Excel, LibreOffice, and other spreadsheet tools.  
-   ✔️ Handles special characters and quoted values gracefully.
+    ✔️ Reads the visible HTML table data and formats it into a clean, well-structured CSV.  
+    ✔️ Automatically triggers a download without requiring any server-side processing.  
+    ✔️ Ensures compatibility with Excel, LibreOffice, and other spreadsheet tools.  
+    ✔️ Handles special characters and quoted values gracefully.
 
 🎯 Why It Matters
 
-   ✔️ Enhances user experience by allowing smooth, dynamic editing of records.  
-   ✔️ Provides admins with an easy way to export data instantly.  
-   ✔️ Avoids page reloads or unnecessary navigation during data updates or exports.  
-   ✔️ Works entirely offline — no internet or server interaction is needed for the download.
+    ✔️ Enhances user experience by allowing smooth, dynamic editing of records.  
+    ✔️ Provides admins with an easy way to export data instantly.  
+    ✔️ Avoids page reloads or unnecessary navigation during data updates or exports.  
+    ✔️ Works entirely offline — no internet or server interaction is needed for the download.
 
 ### PHP files
 
