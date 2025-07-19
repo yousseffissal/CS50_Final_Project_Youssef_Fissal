@@ -14,6 +14,10 @@ Watch this video for more informations:
 
 ![Registration Form](<Code_Files/imgs & videos/screenshots/Form.png>)
 
+### 👋 Welcome Page
+
+![Welcome Page](<Code_Files/imgs & videos/screenshots/Welcome.png>)
+
 ### 🔐 Login Page
 
 ![Login Page](<Code_Files/imgs & videos/screenshots/Signin.png>)
@@ -97,7 +101,8 @@ CS50_Final_Project_Youssef_Fissal
 │   │   ├── screenshots/
 │   │   │   ├── Form.png
 │   │   │   ├── Signin.png
-│   │   │   └── Table.png
+│   │   │   ├── Table.png
+│   │   │   └── Welcome.png
 │   │   │
 │   │   └── video/
 │   │       └── video.mp4
