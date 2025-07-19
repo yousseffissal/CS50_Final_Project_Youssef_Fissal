@@ -605,7 +605,3 @@ Import the provided .sql files to create the databases and the tables:
 This was my final project!.
 
 Thank you CS50 ❤️.
-
-
-
-    
