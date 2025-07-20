@@ -23,11 +23,17 @@ function closeModal() {
 function downloadCSV() {
     const table = document.querySelector("table"); // Select the HTML table
     let csv = [];
-    
+
     for (let row of table.rows) {
         let rowData = [];
-        for (let cell of row.cells) {
-            // Process the text, wrap it in quotes if it contains commas, quotes, or new lines
+        // Skip the last two cells (Delete and Update)
+        let cellCount = row.cells.length;
+
+        // If it's the header row, only export the first (cellCount - 2) headers
+        let limit = (cellCount > 2) ? cellCount - 2 : cellCount;
+
+        for (let i = 0; i < limit; i++) {
+            let cell = row.cells[i];
             let text = cell.innerText.replace(/"/g, '""');
             if (text.includes(",") || text.includes('"') || text.includes('\n')) {
                 text = `"${text}"`;
@@ -36,7 +42,7 @@ function downloadCSV() {
         }
         csv.push(rowData.join(","));
     }
-    
+
     // Join all rows with new lines
     const csvString = csv.join("\n");
 
