@@ -26,11 +26,11 @@ function downloadCSV() {
 
     for (let row of table.rows) {
         let rowData = [];
-        // Skip the last two cells (Delete and Update)
+        // Skip the last 3 cells (Delete, Update & Checkbox)
         let cellCount = row.cells.length;
 
-        // If it's the header row, only export the first (cellCount - 2) headers
-        let limit = (cellCount > 2) ? cellCount - 2 : cellCount;
+        // If it's the header row, only export the first (cellCount - 3) headers
+        let limit = (cellCount > 3) ? cellCount - 3 : cellCount;
 
         for (let i = 0; i < limit; i++) {
             let cell = row.cells[i];
