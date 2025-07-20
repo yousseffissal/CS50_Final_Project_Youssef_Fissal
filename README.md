@@ -26,6 +26,10 @@ Watch this video for more informations:
 
 ![Dashboard Overview](<Code_Files/imgs & videos/screenshots/Table.png>)
 
+### ✅ Accepted Applicants
+
+![Accepted Applicant](<Code_Files/imgs & videos/screenshots/Accepted Applicants.png>)
+
 ---------------------------------
 
 ## 📄 Description:
@@ -99,6 +103,7 @@ CS50_Final_Project_Youssef_Fissal
 │   │   │   └── television.png
 │   │   │
 │   │   ├── screenshots/
+│   │   │   ├── Accepted Applicants
 │   │   │   ├── Form.png
 │   │   │   ├── Signin.png
 │   │   │   ├── Table.png

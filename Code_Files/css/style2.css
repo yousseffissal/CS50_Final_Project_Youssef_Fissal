@@ -1,4 +1,4 @@
-/* --------------------- Global --------------------- */
+/* --------------------- Global Styles --------------------- */
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -10,7 +10,8 @@ body {
     min-height: 100vh;
 }
 
-/* Scrollbar styling */
+/* --------------------- Scrollbar Styling --------------------- */
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -49,7 +50,7 @@ label {
     text-align: start;
 }
 
-/* --------------------- Table --------------------- */
+/* --------------------- Table Styling --------------------- */
 
 table {
     width: 100%;
@@ -73,9 +74,9 @@ tr:nth-child(even) {
     background-color: rgb(224, 221, 217);
 }
 
-/* --------------------- Buttons --------------------- */
+/* --------------------- Button Styles --------------------- */
 
-.delete-btn, .download-btn, .update-btn, .search-btn, .delete-all-btn, .logout-btn, .save-btn, .cancel-btn {
+.delete-btn, .download-btn, .accept-btn, .update-btn, .search-btn, .delete-all-btn, .logout-btn, .save-btn, .cancel-btn {
     padding: 5px 10px;
     border-radius: 5px;
     border: none;
@@ -84,6 +85,7 @@ tr:nth-child(even) {
     color: white;
 }
 
+/* Delete button */
 .delete-btn {
     background-color: #dc3545;
 }
@@ -98,6 +100,7 @@ tr:nth-child(even) {
     color: white;
 }
 
+/* Update button */
 .update-btn {
     background-color: rgb(59, 220, 53);
     text-decoration: none;
@@ -108,6 +111,7 @@ tr:nth-child(even) {
     transform: scale(1.1);
 }
 
+/* Download button */
 .download-btn {
     background-color: green;
     border: 3px solid green;
@@ -120,6 +124,20 @@ tr:nth-child(even) {
     transform: scale(1.02);
 }
 
+/* Accept button */
+.accept-btn {
+    background-color: rgb(236, 100, 10);
+    border: 3px solid rgb(236, 100, 10);
+    border-radius: 15px;
+}
+
+.accept-btn:hover {
+    background-color: rgb(150, 74, 7);
+    border: 3px solid rgb(150, 74, 7);
+    transform: scale(1.02);
+}
+
+/* Search button */
 .search-btn {
     background: rgb(207, 170, 1);
     border: 3px solid rgb(207, 170, 1);
@@ -132,6 +150,7 @@ tr:nth-child(even) {
     transform: scale(1.02);
 }
 
+/* Delete All button */
 .delete-all-btn {
     background: rgb(160, 16, 165);
     border: 3px solid rgb(160, 16, 165);
@@ -144,6 +163,7 @@ tr:nth-child(even) {
     transform: scale(1.02);
 }
 
+/* Logout button */
 .logout-btn {
     background: rgb(16, 98, 165);
     border: 3px solid rgb(16, 98, 165);
@@ -156,6 +176,7 @@ tr:nth-child(even) {
     transform: scale(1.02);
 }
 
+/* Save and Cancel buttons */
 .save-btn {
     background: green;
 }
@@ -164,12 +185,42 @@ tr:nth-child(even) {
     background: red;
 }
 
-/* --------------------- Update Modal --------------------- */
+/* --------------------- Custom Checkbox --------------------- */
+
+.checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #08810c;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.1s, border-color 0.1s, box-shadow 0.1s;
+}
+
+/* Checked state */
+.checkbox:checked {
+    background-color: #10a715;
+    border-color: #10a715;
+}
+
+/* Checkmark symbol */
+.checkbox:checked::after {
+    content: '✔';
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    left: 4px;
+}
+
+/* --------------------- Modal for Update --------------------- */
 
 #updateModal {
     display: none;
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.63);
@@ -208,7 +259,7 @@ tr:nth-child(even) {
     flex-direction: column;
 }
 
-input, textarea {
+input,textarea {
     margin-bottom: 5px;
     padding: 5px;
     border: 1px solid rgba(0, 0, 0, 0.65);
@@ -225,6 +276,8 @@ textarea {
     padding: 10px;
     resize: none;
 }
+
+/* --------------------- Utility Classes --------------------- */
 
 .hidden {
     display: none;

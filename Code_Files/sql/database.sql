@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS registrations (
     gender ENUM('Male', 'Female') NOT NULL,
     favorite_hobby VARCHAR(50) NOT NULL,
     message TEXT NOT NULL,
-    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    is_accepted BOOLEAN DEFAULT FALSE
 );
 

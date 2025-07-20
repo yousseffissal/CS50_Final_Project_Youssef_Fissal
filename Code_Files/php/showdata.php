@@ -8,7 +8,7 @@ if (isset($_POST['logout'])) {
     exit();
 }
 
-// Database credentials for Admin login
+// Connect to Admin Database
 $host     = 'localhost';
 $dbname   = 'Admin';
 $username = 'root';
@@ -20,19 +20,19 @@ try {
     $pdo_user = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     $pdo_user->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Get login form data
+    // Collect login form data
     $name  = $_POST['Name']     ?? '';
     $email = $_POST['Email']    ?? '';
     $pass  = $_POST['Password'] ?? '';
 
-    // Query user by name and email only (password is verified later)
+    // Look for user by name and email
     $stmt = $pdo_user->prepare("SELECT * FROM users WHERE name = :name AND email = :email");
     $stmt->execute([
         ':name'  => $name,
         ':email' => $email
     ]);
 
-    // If user found, verify password
+    // Verify password if user found
     if ($stmt->rowCount() > 0) {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($user && password_verify($pass, $user['password'])) {
@@ -42,7 +42,7 @@ try {
         }
     }
 
-    // Get session values
+    // Get user info from session
     $gender = $_SESSION['gender'] ?? '';
     $name   = $_SESSION['name']   ?? '';
 
@@ -52,7 +52,7 @@ try {
 ?>
 
 <?php
-// Database credentials for Registrations
+// Connect to Registrations Database
 $host = "localhost";
 $dbname = "Registrations";
 $user = "root";
@@ -63,7 +63,7 @@ try {
     $pdo_registration = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
     $pdo_registration->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Handle delete request
+    // Handle single record deletion
     if (isset($_GET['delete'])) {
         $id = $_GET['delete'];
         $stmt = $pdo_registration->prepare("DELETE FROM registrations WHERE id = :id");
@@ -76,7 +76,7 @@ try {
 ?>
 
 <?php
-// Handle "Delete All" request
+// Handle Delete All Registrations
 if (isset($_POST['delete_all'])) {
     try {
         $stmt = $pdo_registration->prepare("DELETE FROM registrations");
@@ -99,8 +99,23 @@ if (isset($_POST['delete_all'])) {
 </head>
 <body>
 <div>
+
 <?php
-// Handle update form submission
+// Handle Accept Selected IDs
+if (isset($_POST['accept_selected']) && !empty($_POST['accept_ids'])) {
+    $ids = $_POST['accept_ids'];
+    $in = str_repeat('?,', count($ids) - 1) . '?';
+    $stmt = $pdo_registration->prepare("UPDATE registrations SET is_accepted = 1 WHERE id IN ($in)");
+    $stmt->execute($ids);
+
+    // Prevent resubmission
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
+}
+?>
+
+<?php
+// Handle Update Registration
 if (isset($_POST['update_id'])) {
     $update_id       = $_POST['update_id'];
     $full_name       = $_POST['full_name'];
@@ -112,7 +127,7 @@ if (isset($_POST['update_id'])) {
     $favorite_hobby  = $_POST['favorite_hobby'];
     $message         = $_POST['message'];
 
-    // Update registration in the database
+    // Update the record
     $stmt = $pdo_registration->prepare("
         UPDATE registrations 
         SET 
@@ -141,12 +156,12 @@ if (isset($_POST['update_id'])) {
 }
 ?>
 
-<?php if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true): 
+<?php 
+// Display Page If Logged In
+if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true): 
 
-    // Get search query
+    // Handle search filter
     $search = $_POST['search'] ?? '';
-
-    // Fetch results from database
     if ($search) {
         $stmt = $pdo_registration->prepare("SELECT * FROM registrations WHERE full_name LIKE :search ORDER BY full_name ASC");
         $stmt->execute([':search' => "%$search%"]);
@@ -156,22 +171,24 @@ if (isset($_POST['update_id'])) {
     }
 ?>
 
-<!-- Success message -->
+<!-- =================== HTML Interface =================== -->
+
+<!-- Welcome Section -->
 <h2 id="successMessage" style="color: green; text-align:center;">Login successful ✅!</h2>
 <h1><i><u>REGISTRATION LIST 📝🔒</u></i></h1>
 <h2>Hello <?php echo htmlspecialchars($gender); ?> <?php echo htmlspecialchars($name); ?> 👋</h2>
 
-<!-- Search and control buttons -->
+<!-- Search & Control Buttons -->
 <form class="search" method="post" style="margin: 20px 0;">
     <input type="text" name="search" placeholder="🔍 Search by name..." value="<?= htmlspecialchars($search) ?>">
-    <button class="search-btn" type="submit">Search</button>
+    <button class="search-btn" type="submit" name="search_btn">Search</button>
     <button class="delete-all-btn" type="submit" name="delete_all" onclick="return confirm('Are you sure you want to delete all registrations?')">Delete All</button>
-    <button class="download-btn" onclick="downloadCSV()">Download</button>
+    <button class="download-btn" type="button" onclick="downloadCSV()">Download</button>
+    <button class="accept-btn" type="submit" name="accept_selected">Accept Selected</button>
     <button class="logout-btn" type="submit" name="logout" onclick="return confirm('Are you sure you want to log out?')">Log Out</button>
-</form>
 
-<?php if (count($rows) > 0): ?>
-    <!-- Registrations table -->
+    <!-- Registration Table -->
+    <?php if (count($rows) > 0): ?>
     <table>
         <thead>
             <tr>
@@ -186,11 +203,13 @@ if (isset($_POST['update_id'])) {
                 <th>Registration Date</th>
                 <th>Delete</th>
                 <th>Update</th>
+                <th>Accept</th>
             </tr>
         </thead>
         <tbody>
         <?php foreach ($rows as $row): ?>
             <tr>
+                <!-- Display user data -->
                 <td><?= htmlspecialchars($row["full_name"]) ?></td>
                 <td><?= htmlspecialchars($row["age"]) ?></td>
                 <td><?= htmlspecialchars($row["academic_level"]) ?></td>
@@ -200,15 +219,17 @@ if (isset($_POST['update_id'])) {
                 <td><?= htmlspecialchars($row["favorite_hobby"]) ?></td>
                 <td><?= htmlspecialchars($row["message"]) ?></td>
                 <td><?= htmlspecialchars($row["registration_date"]) ?></td>
+
+                <!-- Delete button -->
                 <td>
-                    <!-- Delete button -->
                     <button class="delete-btn">
                         <a href="?delete=<?= $row["id"] ?>" onclick="return confirm('Are you sure you want to delete this registration?');">Delete</a>
                     </button>
                 </td>
+
+                <!-- Update button -->
                 <td>
-                    <!-- Update button triggers modal -->
-                    <button class="update-btn" onclick="openModal(
+                    <button class="update-btn" type="button" onclick="openModal(
                         '<?= htmlspecialchars($row['id']) ?>',
                         '<?= htmlspecialchars($row['full_name']) ?>',
                         '<?= htmlspecialchars($row['age']) ?>',
@@ -220,15 +241,24 @@ if (isset($_POST['update_id'])) {
                         '<?= htmlspecialchars($row['message']) ?>'
                     )">Update</button>
                 </td>
+
+                <!-- Accept checkbox -->
+                <td>
+                    <?php if ($row['is_accepted']): ?>
+                        <span style="color: green; font-weight: bold;">Accepted</span>
+                    <?php else: ?>
+                        <input type="checkbox" name="accept_ids[]" class="checkbox" value="<?= $row["id"] ?>">
+                    <?php endif; ?>
+                </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
     </table>
+</form> <!-- End Form -->
 
-    <!-- End of table message -->
-    <h2 style="color: red; text-align:center;">End of table</h2>
+<h2 style="color: red; text-align:center;">End of table</h2>
 
-    <!-- Modal for updating registrations -->
+<!-- Modal for updating registrations -->
     <div id="updateModal">
         <div class="updateform">
             <h1><u>Edit Registration ✏️</u></h1>
@@ -286,25 +316,23 @@ if (isset($_POST['update_id'])) {
                 </div>
             </form>
         </div>
-    </div>
 
 <?php else: ?>
-    <!-- Message if no registrations found -->
+    </form>
     <h1 class="message">No registrations found.</h1>
 <?php endif; ?>
 
 <?php else: ?>
-    <!-- Login failed message -->
-    <h2 style="color: red; font-size: 24px; font-weight: bold; margin-top: 50px;">
-        Login failed ❌<br>
-        Name, email, or password incorrect.
-    </h2>
-    <script>
-        // Redirect to sign-in page after 3 seconds
-        setTimeout(function(){
-            window.location.href = '../html/signin.html';
-        }, 3000);
-    </script>
+<!-- Show login error message -->
+<h2 style="color: red; font-size: 24px; font-weight: bold; margin-top: 50px;">
+    Login failed ❌<br>
+    Name, email, or password incorrect.
+</h2>
+<script>
+    setTimeout(function(){
+        window.location.href = '../html/signin.html';
+    }, 3000);
+</script>
 <?php endif; ?>
 </div>
 </body>
