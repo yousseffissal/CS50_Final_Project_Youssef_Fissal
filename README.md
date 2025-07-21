@@ -34,7 +34,7 @@ Watch this video for more informations:
 
 ## 📄 Description:
 
-My project simplifies managing membership registrations for a university club called CTDE by replacing manual processes with a digital system. It includes two main parts: a registration form for members to submit their details and an admin dashboard for authorized staff to view, edit, or delete registrations securely.
+My project simplifies managing membership registrations for a university club called CTDE by replacing manual processes with a digital system. It includes two main parts: a registration form for members to submit their details and an admin dashboard for authorized staff to view, edit, accept, or delete registrations securely.
 
 Built using core web technologies HTML, CSS, JavaScript, PHP, and MySQL. the site is fully responsive and functional without external libraries. Security features like password hashing and session management protect the admin area. This project solves a real community problem while reinforcing full-stack development skills learned in CS50 😊.
 
