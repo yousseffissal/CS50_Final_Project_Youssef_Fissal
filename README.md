@@ -75,6 +75,8 @@ In the end, I opted for a simpler and more user-friendly solution by implementin
 - ✔️ Easily deployable to a production hosting environment (e.g., shared hosting, cPanel, or cloud)
 - ✔️ Codebase designed for maintainability and scalability (easy to edit, upgrade, or refactor)
 - ✔️ Built with future enhancements in mind (e.g., email confirmation, analytics, multi-language support)
+- ✔️ Admins can mark selected registrations as "Accepted" directly from the dashboard
+- ✔️ Accepted names are automatically displayed on a public Accepted Members page
 
 ---------------------------------
 
@@ -210,6 +212,32 @@ To allow verified admins to log in with their credentials and access the registr
     ✔️ JavaScript is used to show the loading spinner dynamically when the form is submitted, improving the user experience and interactivity.
 
 ### CSS files
+
+#### `style.css – Custom Form Styling`
+
+This CSS file powers the vibrant and fully responsive user interface for the registration form. It combines clear structure, colorful design, and flexible responsiveness for a smooth user experience across all devices.
+
+Key Features:
+
+    ✔️ Modern layout using Flexbox for easy alignment and vertical/horizontal centering
+    ✔️ Gradient background and colorful form panels for an engaging visual design
+    ✔️ Two-section layout with a registration form on the left and an animated illustration/video on the right (desktop only)
+    ✔️ TV-style video display with custom rotation and shadow, adding dynamic visual appeal
+    ✔️ Fully responsive: collapses to a mobile-first, single-column layout on smaller screens
+    ✔️ Rounded corners, shadows, and transparency effects to create depth and visual hierarchy
+    ✔️ Styled form inputs and labels for a consistent and user-friendly data entry experience
+    ✔️ Clean form structure with clearly grouped input elements using .form_row and .form_group for better organization
+    ✔️ Optional animated elements like TV and mascot pins that enrich the experience without overwhelming the user
+    ✔️ Easy to extend and maintain, with modular sections (form, buttons, layout, media)
+
+📱 Responsive Design:
+
+    📏 Media queries ensure the layout adapts to screen size:
+
+            * On screens < 1074px, the visual box (.box2) is hidden for a simplified view
+            * On screens < 502px, the form takes up the full screen and all radius effects are removed to optimize for mobile
+
+This stylesheet is designed to be both aesthetic and functional, enhancing the user experience while staying light and accessible.
  
 #### `style2.css – Admin Dashboard Styling`
 
