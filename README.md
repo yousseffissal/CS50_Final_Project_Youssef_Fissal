@@ -217,19 +217,16 @@ This CSS file is dedicated to the styling of the Admin Dashboard, which allows c
 
 Key roles:
 
-    ✔️ 🎨 **Visual Consistency**: Defines the layout, colors, and typography used in the dashboard, creating a clean and user-friendly experience.
-
-    ✔️ 📊 **Table Styling**: Enhances the visibility and structure of the data table using alternating row colors, custom headers, and spacing.
-
-    ✔️ 🔘 **Button Design**: Includes customized styles for action buttons such as **Download**, Delete, Update, Search, Logout, and Delete All — each with hover effects to improve usability and accessibility.
-
-    ✔️ 📥 **Download Button Styling**: A distinct style has been applied to the **Download CSV** button to highlight it as an important utility for exporting registration data, with a green background and hover scaling animation.
-
-    ✔️ ✏️ **Update Modal**: Styles the popup modal used when editing user data, ensuring it's accessible and visually distinct from the background.
-
-    ✔️ 📐 **Form Styling**: Applies consistent and responsive design to the inputs and layout within the modal form.
-
-    ✔️ 🖱️ **Scrollbar Customization**: Adjusts the default browser scrollbar to better match the site’s overall theme.
+    ✔️ 🎨 Visual Consistency: Defines the layout, colors, and typography used in the dashboard, creating a clean and user-friendly experience.
+    ✔️ 📊 Table Styling: Enhances the visibility and structure of the data table using alternating row colors, custom headers, and spacing.
+    ✔️ 🔘 Button Design: Includes customized styles for action buttons such as Download, Delete, Update, Search, Logout, and Delete All — each with hover effects to improve usability and accessibility.
+    ✔️ 📥 Download Button Styling: A distinct style has been applied to the Download CSV button to highlight it as an important utility for exporting registration data, with a green background and hover scaling animation.
+    ✔️ ✏️ Update Modal: Styles the popup modal used when editing user data, ensuring it's accessible and visually distinct from the background.
+    ✔️ 📐 Form Styling: Applies consistent and responsive design to the inputs and layout within the modal form.
+    ✔️ 🖱️ Scrollbar Customization: Adjusts the default browser scrollbar to better match the site’s overall theme.
+    ✔️ 💾 Custom Checkbox Styling: A visually enhanced checkbox has been added, featuring rounded borders, a green checkmark on selection, and smooth transitions for improved interactivity and modern design.
+    ✔️ 🖊️ Save & Cancel Buttons Enhancement: Buttons inside the update modal now have distinct styles — green for Save and red for Cancel — with hover effects to guide user actions clearly.
+    ✔️ 🌀 Improved Modal Button Interaction: All modal-related buttons include hover scaling effects, making the interface feel more dynamic and responsive.
 
 This file plays a vital role in making the admin interface professional, functional, and intuitive without relying on any third-party libraries.
 
@@ -448,6 +445,14 @@ This is the core PHP file that powers the Admin Dashboard, handling everything f
     ✔️ Confirmation pop-ups for sensitive actions like delete/logout.
     ✔️ Fully styled dashboard using style2.css and powered by script.js.
     ✔️ Download button for exporting the table data to a CSV file with proper formatting.
+
+🧮 Accept Selected Registrations: 
+
+    ✔️ "Accept Selected" button has been added, allowing admins to select multiple registrations using checkboxes and mark them as accepted in bulk. Accepted entries display a green "Accepted" label.
+
+🗃️ is_accepted Database Integration:
+
+    ✔️ The registrations table includes an is_accepted field. The system checks and updates this field when accepting members from 0 to 1, enabling admin tracking of confirmed entries.
 
 🎯 Why This File Matters:
 
