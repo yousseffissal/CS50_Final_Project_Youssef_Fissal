@@ -134,7 +134,7 @@ try {
                 </tbody>
             </table>
 
-            <h3>For more information, contact us 📧</h3>
+            <h3>For more informations, contact us 📧</h3>
         <?php else: ?>
             <h2 class="message">No accepted applicants yet</h2>
         <?php endif; ?>

@@ -453,9 +453,28 @@ This is the core PHP file that powers the Admin Dashboard, handling everything f
 
     This file represents the heart of the admin interface. It brings together frontend and backend logic, handles sessions, user feedback, and secure data operations, all without relying on external frameworks.
 
-#### `accepted.php – Accepted Applicants List`
+#### `accepted.php – Accepted Applicants Display`
 
+This PHP file connects to the Registrations database and retrieves a list of applicants whose registrations have been accepted.
 
+🔍 Functionality Overview:
+
+    ✔️ Connects to the database using PDO.
+    ✔️ Runs a SQL query to select all full_name values from the registrations table where is_accepted = 1.
+    ✔️ Displays the accepted names in an HTML table, styled with responsive and modern CSS.
+    ✔️ If no accepted applicants exist, it displays a friendly message.
+    ✔️ Includes basic error handling for database connection failures.
+
+🧩 Key Logic
+
+    ✔️ Uses a try...catch block for secure database connection.
+    ✔️ Uses htmlspecialchars() to avoid XSS vulnerabilities when printing user names.
+    ✔️ Provides a responsive layout that adjusts for smaller screens.
+
+📌 Special Notes
+
+    ✔️ The field is_accepted is a BOOLEAN indicating whether an applicant has been accepted (1) or not (0).
+    ✔️ This page can be linked as a public-facing view to show the list of accepted members without exposing any private data.
 
 ### SQL files
 
@@ -514,6 +533,10 @@ registrations
     ✔️ favorite_hobby: Selected hobby from a predefined list.
     ✔️ message: Custom text provided by the user (e.g., motivation).
     ✔️ registration_date: Automatically set to the current time when the form is submitted.
+    ✔️ is_accepted: This field helps distinguish between accepted and unaccepted applications within the system:
+
+            * The default value is FALSE, meaning the registration is pending.
+            * When the registration is approved, this value is updated to TRUE.
 
 🛡️ Design Notes:
 
