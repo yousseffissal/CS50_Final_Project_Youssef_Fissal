@@ -116,6 +116,7 @@ CS50_Final_Project_Youssef_Fissal
 │   │   └── script.js
 │   │
 │   ├── php/
+│   │   ├── accepted.php
 │   │   ├── index.php
 │   │   ├── insert_users.php
 │   │   └── showdata.php
@@ -451,6 +452,10 @@ This is the core PHP file that powers the Admin Dashboard, handling everything f
 🎯 Why This File Matters:
 
     This file represents the heart of the admin interface. It brings together frontend and backend logic, handles sessions, user feedback, and secure data operations, all without relying on external frameworks.
+
+#### `accepted.php – Accepted Applicants List`
+
+
 
 ### SQL files
 
