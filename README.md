@@ -649,7 +649,7 @@ Import the provided .sql files to create the databases and the tables:
 
     `http://localhost/CS50_Final_Project_Youssef_Fissal/Code_Files/html/signin.html`
 
-    To open the Accepted Applicants page, go to:
+    To open the Accepted Applicants Page, go to:
 
      `http://localhost/CS50_Final_Project_Youssef_Fissal/Code_Files/php/accepted.php` (Of course there will be no accepted applicants at first)
 
@@ -669,7 +669,7 @@ Import the provided .sql files to create the databases and the tables:
         ✔️ View, search, update, delete, accept & control registrations.
         ✔️ Download/export the table data to a CSV.
         ✔️ And use all other Features listed in this README file
-        
+
 ---------------------------------
 
 This was my final project!.
