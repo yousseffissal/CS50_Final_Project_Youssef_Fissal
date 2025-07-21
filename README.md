@@ -649,6 +649,10 @@ Import the provided .sql files to create the databases and the tables:
 
     `http://localhost/CS50_Final_Project_Youssef_Fissal/Code_Files/html/signin.html`
 
+    To open the Accepted Applicants page, go to:
+
+     `http://localhost/CS50_Final_Project_Youssef_Fissal/Code_Files/php/accepted.php` (Of course there will be no accepted applicants at first)
+
 8) To log in as an admin, first run the script `insert_users.php` once to seed the Admin database with default users, To do this, open:
 
     `http://localhost/CS50_Final_Project_Youssef_Fissal/Code_Files/php/insert_users.php`
@@ -662,10 +666,10 @@ Import the provided .sql files to create the databases and the tables:
 
         ✔️ Register new members.
         ✔️ Log in as an Admin.
-        ✔️ View, search, update, delete & control registrations.
-        ✔️ And use all other Features listed in this README file
+        ✔️ View, search, update, delete, accept & control registrations.
         ✔️ Download/export the table data to a CSV.
-
+        ✔️ And use all other Features listed in this README file
+        
 ---------------------------------
 
 This was my final project!.
