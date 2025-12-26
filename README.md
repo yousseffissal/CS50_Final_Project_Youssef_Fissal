@@ -134,9 +134,11 @@ CS50_Final_Project_Youssef_Fissal
 
 ⚠️ **Important Notice:**  
 
-    If you plan to clone or fork this repository, please make sure to check the name of the main project folder (CS50_Final_Project_Youssef_Fissal).  
-    It might differ from the folder name I used during development.  
-    This is crucial to ensure that the site functions properly and that all path-based URLs work as expected.
+If you plan to clone or fork this repository, please make sure to check the name of the main project folder (CS50_Final_Project_Youssef_Fissal).  
+It might differ from the folder name I used during development.  
+This is crucial to ensure that the site functions properly and that all path-based URLs work as expected.
+
+---------------------------------
 
 ### HTML files
  
@@ -150,14 +152,14 @@ To collect detailed information from new members who wish to join the club throu
 
 🧾 Form Fields:
 
-* Full Name (required)
-* Age (required)
-* Academic Level (e.g., DEUST, Master, PhD)
-* Phone Number
-* Email Address
-* Gender (dropdown: Male / Female)
-* Favorite Hobby (select from multiple options)
-* Message (textarea to express motivation or expectations)
+    * Full Name (required)
+    * Age (required)
+    * Academic Level (e.g., DEUST, Master, PhD)
+    * Phone Number
+    * Email Address
+    * Gender (dropdown: Male / Female)
+    * Favorite Hobby (select from multiple options)
+    * Message (textarea to express motivation or expectations)
 
 🔁 Functionality:
 
@@ -167,16 +169,16 @@ To collect detailed information from new members who wish to join the club throu
 
 🖼️ UI Structure:
 
-    Left section: 
+Left section: 
 
-        ✔️ Contains the registration form and visual elements like icons and logos.
+    ✔️ Contains the registration form and visual elements like icons and logos.
 
-    Right section: Provides information about the CTDE Club, including:
+Right section: Provides information about the CTDE Club, including:
 
-        ✔️ A brief mission statement.
-        ✔️ A welcoming paragraph.
-        ✔️ A video presentation for the club embedded inside a picture frame & a TV-themed frame.
-        ✔️ A pin icon and branding visuals.
+    ✔️ A brief mission statement.
+    ✔️ A welcoming paragraph.
+    ✔️ A video presentation for the club embedded inside a picture frame & a TV-themed frame.
+    ✔️ A pin icon and branding visuals.
 
 🎨 Design Notes:
 
@@ -194,9 +196,9 @@ To allow verified admins to log in with their credentials and access the registr
 
 🔐 Form Fields:
 
-* Full Name (required)
-* Email Address (for flexibility)
-* Password (input type password for confidentiality)
+    * Full Name (required)
+    * Email Address (for flexibility)
+    * Password (input type password for confidentiality)
 
 🔁 Functionality:
 
@@ -327,7 +329,7 @@ This file serves as the main backend handler for the registration form. It proce
 
 📬 Frontend – Confirmation Page:
 
-    Upon successful registration, a custom-designed confirmation page is displayed featuring:
+Upon successful registration, a custom-designed confirmation page is displayed featuring:
 
     ✔️ A welcome icon
     ✔️ The user's name in large font
@@ -450,15 +452,15 @@ This is the core PHP file that powers the Admin Dashboard, handling everything f
 
 📋 Displayed Fields:
 
-* Full Name  
-* Age  
-* Academic Level  
-* Phone Number  
-* Email  
-* Gender  
-* Favorite Hobby  
-* Message  
-* Registration Date
+    * Full Name  
+    * Age  
+    * Academic Level  
+    * Phone Number  
+    * Email  
+    * Gender  
+    * Favorite Hobby  
+    * Message  
+    * Registration Date
 
 🧪 Search Feature:
 
